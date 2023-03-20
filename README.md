@@ -1,4 +1,4 @@
-<img src="./memformer.png" width="600px"></img>
+<img src="./img/memformer.png" width="600px"></img>
 
 ## Memformer - Pytorch
 
