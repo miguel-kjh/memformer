@@ -2,6 +2,9 @@ from torch import nn
 
 
 class PreNorm(nn.Module):
+    """
+    PreNorm layer
+    """
     def __init__(self, dim, fn):
         super().__init__()
         self.fn = fn

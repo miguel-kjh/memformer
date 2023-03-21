@@ -6,6 +6,9 @@ from torch import nn
 
 
 class RelativePositionBias(nn.Module):
+    """
+    Relative Position Bias
+    """
     def __init__(self, causal=False, num_buckets=32, max_distance=128, heads=8):
         super().__init__()
         self.causal = causal

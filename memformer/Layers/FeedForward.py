@@ -2,6 +2,9 @@ from torch import nn
 
 
 class FeedForward(nn.Module):
+    """
+    FeedForward layer
+    """
     def __init__(self, dim, mult=4):
         super().__init__()
         self.net = nn.Sequential(
