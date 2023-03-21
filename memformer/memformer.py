@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from inspect import isfunction
 from einops import rearrange, repeat
 from collections import namedtuple
-from autoregressive_wrapper import AutoregressiveWrapper
+from decode.autoregressive_wrapper import AutoregressiveWrapper
 
 # constants
 

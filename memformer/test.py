@@ -1,6 +1,6 @@
 import torch
 from memformer import Memformer
-from mrbp import memory_replay_backprop
+from optimization.mrbp import memory_replay_backprop
 
 def encode_only():
     model = Memformer(
