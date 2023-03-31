@@ -47,19 +47,23 @@ def encode_decode_mrbp():
     ).cuda()
 
     seq = torch.randint(0, 256, (1, 8192)).cuda()
+    print("seq.shape:", seq.shape)
     seq_mask = torch.ones_like(seq).bool().cuda()
 
     tgt = torch.randint(0, 256, (1, 512)).cuda()
+    print("tgt.shape:", tgt.shape)
     tgt_mask = torch.ones_like(tgt).bool().cuda()
 
     # will automatically split the source sequence to 8 segments
-    memory_replay_backprop(
-        model,
-        src = seq,
-        tgt = tgt,
-        src_mask = seq_mask,
-        tgt_mask = tgt_mask
-    )
+    for _ in range(8):
+        loss = memory_replay_backprop(
+            model,
+            src = seq,
+            tgt = tgt,
+            src_mask = seq_mask,
+            tgt_mask = tgt_mask
+        )
+        print(loss.item())
     print("Encoder decoder done + MRBp.")
 
 def encode_decode():
@@ -90,8 +94,8 @@ def encode_decode():
     print("Encoder decoder done .")
 
 def main():
-    encode_only()
-    encode_decode()
+    #encode_only()
+    #encode_decode()
     encode_decode_mrbp()
 
 if __name__ == '__main__':

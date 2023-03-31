@@ -50,3 +50,5 @@ def memory_replay_backprop(
         # if not the last step, pass the next memory's gradient back a step
         if i != 0:
             mem_grad.copy_(mems.grad.data)
+
+    return tgt_loss
